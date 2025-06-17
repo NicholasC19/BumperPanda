@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhmi7shtjniax"]
+
+[ext_resource type="Script" uid="uid://cta2jfkgbhmty" path="res://Scenes/wall.gd" id="1_d155t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b57mv"]
+size = Vector2(352, 2018)
+
+[node name="Wall" type="Area2D"]
+script = ExtResource("1_d155t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-166, 997)
+shape = SubResource("RectangleShape2D_b57mv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

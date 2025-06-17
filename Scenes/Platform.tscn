@@ -1,0 +1,122 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3t3c5el3rgeg"]
+
+[ext_resource type="Texture2D" uid="uid://5tk37pnh6t1a" path="res://Assets/Platform.png" id="1_pquxj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8n7cf"]
+size = Vector2(160, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pquxj"]
+size = Vector2(160, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kti7u"]
+size = Vector2(114, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vayem"]
+size = Vector2(83.125, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7274a"]
+size = Vector2(80, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2t55"]
+size = Vector2(281, 16)
+
+[node name="Platforms" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(880.5, 167)
+scale = Vector2(0.181424, 0.762346)
+texture = ExtResource("1_pquxj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(880, 160)
+shape = SubResource("RectangleShape2D_8n7cf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(272.5, 167)
+scale = Vector2(0.181424, 0.762346)
+texture = ExtResource("1_pquxj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(272, 160)
+shape = SubResource("RectangleShape2D_8n7cf")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(440, 336)
+scale = Vector2(0.181424, 0.762346)
+texture = ExtResource("1_pquxj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(440, 328)
+shape = SubResource("RectangleShape2D_pquxj")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(800, 312)
+scale = Vector2(0.181424, 0.762346)
+texture = ExtResource("1_pquxj")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(800, 304)
+shape = SubResource("RectangleShape2D_pquxj")
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+position = Vector2(584, 232)
+scale = Vector2(0.181424, 0.762346)
+texture = ExtResource("1_pquxj")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="."]
+position = Vector2(584, 224)
+shape = SubResource("RectangleShape2D_pquxj")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(160, 280)
+scale = Vector2(0.132379, 0.762346)
+texture = ExtResource("1_pquxj")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(159, 272)
+shape = SubResource("RectangleShape2D_kti7u")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(976, 424)
+scale = Vector2(0.0972222, 0.762346)
+texture = ExtResource("1_pquxj")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(976, 416)
+shape = SubResource("RectangleShape2D_vayem")
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+position = Vector2(1048, 89)
+scale = Vector2(0.0972222, 0.762346)
+texture = ExtResource("1_pquxj")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="."]
+position = Vector2(1048, 80)
+shape = SubResource("RectangleShape2D_vayem")
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+position = Vector2(88, 89)
+scale = Vector2(0.0972222, 0.762346)
+texture = ExtResource("1_pquxj")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="."]
+position = Vector2(88, 80)
+shape = SubResource("RectangleShape2D_vayem")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(80, 464)
+scale = Vector2(0.0902778, 0.762346)
+texture = ExtResource("1_pquxj")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
+position = Vector2(80, 456)
+shape = SubResource("RectangleShape2D_7274a")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(576, 79)
+scale = Vector2(0.319444, 0.762346)
+texture = ExtResource("1_pquxj")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(576, 71)
+shape = SubResource("RectangleShape2D_p2t55")

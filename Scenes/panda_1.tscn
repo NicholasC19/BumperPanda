@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmhko1d5qe1gf"]
+
+[ext_resource type="Texture2D" uid="uid://c54wgh8d3yy21" path="res://Assets/pandasit.png" id="1_j5bbk"]
+[ext_resource type="Script" uid="uid://chp61phlh3lt4" path="res://Scenes/panda_1.gd" id="1_rp4wx"]
+[ext_resource type="Texture2D" uid="uid://csbv405tdbnha" path="res://Assets/pandainair.png" id="3_lsyc4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rp4wx"]
+radius = 27.0
+height = 70.0
+
+[sub_resource type="Animation" id="Animation_abf4s"]
+resource_name = "1Jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_j5bbk"), ExtResource("3_lsyc4"), ExtResource("1_j5bbk")]
+}
+
+[sub_resource type="Animation" id="Animation_r4lar"]
+resource_name = "1flip"
+
+[sub_resource type="Animation" id="Animation_6xbsg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_j5bbk")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r4lar"]
+_data = {
+&"1Jump": SubResource("Animation_abf4s"),
+&"1flip": SubResource("Animation_r4lar"),
+&"RESET": SubResource("Animation_6xbsg")
+}
+
+[node name="Panda1" type="RigidBody2D"]
+script = ExtResource("1_rp4wx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j5bbk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 1)
+shape = SubResource("CapsuleShape2D_rp4wx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_r4lar")
+}

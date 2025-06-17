@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyamvvn83htw"]
+
+[ext_resource type="Script" uid="uid://dkei7l8gsicl" path="res://Scenes/main.gd" id="1_r150o"]
+[ext_resource type="Texture2D" uid="uid://cokfcfd4e1x5m" path="res://Assets/Background.png" id="2_idj7w"]
+[ext_resource type="PackedScene" uid="uid://cmhko1d5qe1gf" path="res://Scenes/panda_1.tscn" id="3_pbw6q"]
+[ext_resource type="PackedScene" uid="uid://bhogintr4h4wr" path="res://Scenes/panda_2.tscn" id="4_v1gob"]
+[ext_resource type="PackedScene" uid="uid://daubill0rvrxa" path="res://Scenes/ground.tscn" id="5_jw32o"]
+[ext_resource type="PackedScene" uid="uid://dhmi7shtjniax" path="res://Scenes/wall.tscn" id="6_v1gob"]
+[ext_resource type="PackedScene" uid="uid://du0vmp30ys7gs" path="res://Scenes/UI.tscn" id="7_jw32o"]
+[ext_resource type="PackedScene" uid="uid://d3t3c5el3rgeg" path="res://Scenes/Platform.tscn" id="8_50glp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50glp"]
+size = Vector2(2815, 109)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_r150o")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_idj7w")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Panda1" parent="." instance=ExtResource("3_pbw6q")]
+position = Vector2(-342, -272)
+
+[node name="Panda2" parent="." instance=ExtResource("4_v1gob")]
+position = Vector2(284, -285)
+
+[node name="Ground" parent="." instance=ExtResource("5_jw32o")]
+position = Vector2(0, 268)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4.5, -378.5)
+shape = SubResource("RectangleShape2D_50glp")
+
+[node name="Wall" parent="." instance=ExtResource("6_v1gob")]
+position = Vector2(-586, -685)
+
+[node name="Wall2" parent="." instance=ExtResource("6_v1gob")]
+position = Vector2(918, -737)
+
+[node name="UI" parent="." instance=ExtResource("7_jw32o")]
+
+[node name="Platforms" parent="." instance=ExtResource("8_50glp")]
+position = Vector2(-580, -281)
+
+[connection signal="point_scored" from="Wall" to="." method="_on_wall_point_scored"]
+[connection signal="point_scored" from="Wall2" to="." method="_on_wall_2_point_scored"]
